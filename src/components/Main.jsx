@@ -9,24 +9,22 @@ function Main() {
                 </p>
             </div>
             <div className="form-content">
-                <h2>Try it free 7 days then $20/mo. thereafter</h2>
-                <div className="card">
+                <div className="box">
+                    <p><strong>Try it free 7 days </strong> then $20/mo. thereafter</p>
+                </div>
+                <div id="card" className="card">
                     <form>
                         <div>
-                            <label htmlFor="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" />
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" />
                         </div>
                         <div>
-                            <label htmlFor="lastName">Last Name </label>
-                            <input type="text" id="lastName" name="lastName" />
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" />
                         </div>
                         <div>
-                            <label htmlFor="emailAddress">Email Address</label>
-                            <input type="text" id="emailAddress" name="emailAddress" />
+                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" />
                         </div>
                         <div>
-                            <label htmlFor="password">Password</label>
-                            <input type="text" id="password" name="password" />
+                            <input type="text" id="password" name="password" placeholder="Password" />
                         </div>
                         <button type="submit">Claim your free trial</button>
                         <p>By clicking the button, you are agreeing to our Terms and Services</p>

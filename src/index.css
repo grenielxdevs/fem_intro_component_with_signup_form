@@ -38,8 +38,30 @@ body {
   width: 50%;
 }
 
-/* Card Styles */
+#main-content .form-content .box {
+  background-color: var(--blue);
+  border-radius: 12px;
+  padding: 5px 30px;
+  margin-bottom: 20px;
+}
 
+#main-content .form-content .box p {
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  
+}
+
+#main-content .form-content .box p strong {
+  font-weight: 700;
+}
+
+/* Card Styles */
+#card {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+}
 
 /* Footer Styles 
 =================================== */
