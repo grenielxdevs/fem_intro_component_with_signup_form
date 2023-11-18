@@ -27,7 +27,7 @@ function Main() {
                             <input type="text" id="password" name="password" placeholder="Password" />
                         </div>
                         <button type="submit">Claim your free trial</button>
-                        <p>By clicking the button, you are agreeing to our Terms and Services</p>
+                        <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
                     </form>
                 </div>
             </div>
