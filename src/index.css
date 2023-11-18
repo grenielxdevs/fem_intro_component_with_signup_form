@@ -7,7 +7,7 @@
 
 :root {
   --red: hsl(0, 100%, 74%);
-  --reen: hsl(154, 59%, 51%);
+  --green: hsl(154, 59%, 51%);
   --blue: hsl(248, 32%, 49%);
   --dark-blue: hsl(249, 10%, 26%); 
   --grayish-blue: hsl(246, 25%, 77%);
@@ -54,6 +54,31 @@ body {
 
 #main-content .form-content .box p strong {
   font-weight: 700;
+}
+
+#main-content .form-content input {
+  display: block;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+
+  font-weight: 500;
+}
+
+#main-content .form-content button {
+  display: block;
+  width: 100%;
+  background-color: var(--green);
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  
 }
 
 /* Card Styles */
