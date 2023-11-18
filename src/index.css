@@ -14,7 +14,7 @@
 }
 
 body {
-  background: var(--red) url('../public/images/bg-intro-desktop.png') center no-repeat;
+  background: var(--red) url('/images/bg-intro-desktop.png') center no-repeat;
   background-size: cover;
 }
 
@@ -38,6 +38,9 @@ body {
   width: 50%;
 }
 
+/* Card Styles */
+
+
 /* Footer Styles 
 =================================== */
 #footer .attribution { 
@@ -48,3 +51,4 @@ body {
 #footer .attribution a { 
   color: hsl(228, 45%, 44%); 
 }
+
