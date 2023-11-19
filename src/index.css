@@ -18,6 +18,8 @@
 body {
   background: var(--red) url('/images/bg-intro-desktop.png') center no-repeat;
   background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
 /* Main Styles 
@@ -178,8 +180,10 @@ body {
 /* Footer Styles 
 =================================== */
 #footer .attribution { 
+  padding: 0 20px;
   font-size: 12px; 
-  text-align: center; 
+  color: #ffffff;
+  text-align: center;
 }
 
 #footer .attribution a {
