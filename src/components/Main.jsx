@@ -1,14 +1,22 @@
 import { useState } from 'react';
 
 function Main() {
-    const [firstNameInput, setFirstNameInput] = useState('');
-    const [lastNameInput, setLastNameInput] = useState('');
-    const [emailInput, setEmailInput] = useState('');
-    const [passwordInput, setPasswordInput] = useState('');
-
+    const [input, setInput] = useState({
+        firstNameInput: '',
+        lastNameInput: '',
+        emailInput: '',
+        passwordInput: ''
+    })
 
     const handleSubmitForm = (e) => {
         e.preventDefault();
+
+
+        console.log(input.firstNameInput);
+        console.log(input.lastNameInput);
+        console.log(input.emailInput);
+        console.log(input.passwordInput);
+
     }
 
     return (
@@ -27,16 +35,16 @@ function Main() {
                 <div id="card" className="card">
                     <form onSubmit={handleSubmitForm}>
                         <div>
-                            <input type="text" id="firstName" name="firstName" value={firstNameInput} placeholder="First Name" onChange={(e) => setFirstNameInput(e.target.value)} />
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" value={input.firstNameInput} onChange={(e) => setInput({ firstNameInput: e.target.value})} />
                         </div>
                         <div>
-                            <input type="text" id="lastName" name="lastName" value={lastNameInput} placeholder="Last Name" onChange={(e) => setLastNameInput(e.target.value)} />
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" value={input.lastNameInput} onChange={(e) => setInput({ lastNameInput: e.target.value})} />
                         </div>
                         <div>
-                            <input type="text" id="emailAddress" name="emailAddress" value={emailInput} placeholder="Email Address" onChange={(e) => setEmailInput(e.target.value)} />
+                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" value={input.emailInput} onChange={(e) => setInput({ emailInput: e.target.value})} />
                         </div>
                         <div>
-                            <input type="text" id="password" name="password" value={passwordInput} placeholder="Password" onChange={(e) => setPasswordInput(e.target.value)} />
+                            <input type="text" id="password" name="password" placeholder="Password" value={input.passwordInput} onChange={(e) => setInput({ passwordInput: e.target.value})} />
                         </div>
                         <button type="submit">Claim your free trial</button>
                         <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
