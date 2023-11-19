@@ -1,4 +1,16 @@
+import { useState } from 'react';
+
 function Main() {
+    const [firstNameInput, setFirstNameInput] = useState('');
+    const [lastNameInput, setLastNameInput] = useState('');
+    const [emailInput, setEmailInput] = useState('');
+    const [passwordInput, setPasswordInput] = useState('');
+
+
+    const handleSubmitForm = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <main id="main-content">
             <div className="text-content">
@@ -13,18 +25,18 @@ function Main() {
                     <p><strong>Try it free 7 days </strong> then $20/mo. thereafter</p>
                 </div>
                 <div id="card" className="card">
-                    <form>
+                    <form onSubmit={handleSubmitForm}>
                         <div>
-                            <input type="text" id="firstName" name="firstName" placeholder="First Name" />
+                            <input type="text" id="firstName" name="firstName" value={firstNameInput} placeholder="First Name" onChange={(e) => setFirstNameInput(e.target.value)} />
                         </div>
                         <div>
-                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" />
+                            <input type="text" id="lastName" name="lastName" value={lastNameInput} placeholder="Last Name" onChange={(e) => setLastNameInput(e.target.value)} />
                         </div>
                         <div>
-                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" />
+                            <input type="text" id="emailAddress" name="emailAddress" value={emailInput} placeholder="Email Address" onChange={(e) => setEmailInput(e.target.value)} />
                         </div>
                         <div>
-                            <input type="text" id="password" name="password" placeholder="Password" />
+                            <input type="text" id="password" name="password" value={passwordInput} placeholder="Password" onChange={(e) => setPasswordInput(e.target.value)} />
                         </div>
                         <button type="submit">Claim your free trial</button>
                         <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
