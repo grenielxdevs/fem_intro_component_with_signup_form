@@ -8,14 +8,14 @@ function Main() {
         passwordInput: ''
     })
 
-    const handleSubmitForm = (e) => {
+    function handleSubmitForm(e) {
         e.preventDefault();
 
-
-        console.log(input.firstNameInput);
-        console.log(input.lastNameInput);
-        console.log(input.emailInput);
-        console.log(input.passwordInput);
+        for(let inputEl in input) {
+            if(!input[inputEl]) {
+                console.log('wrong')
+            }
+        }
 
     }
 
@@ -35,16 +35,16 @@ function Main() {
                 <div id="card" className="card">
                     <form onSubmit={handleSubmitForm}>
                         <div>
-                            <input type="text" id="firstName" name="firstName" placeholder="First Name" value={input.firstNameInput} onChange={(e) => setInput({ firstNameInput: e.target.value})} />
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" defaultValue={input.firstNameInput} onChange={(e) => setInput({ firstNameInput: e.target.value})} />
                         </div>
                         <div>
-                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" value={input.lastNameInput} onChange={(e) => setInput({ lastNameInput: e.target.value})} />
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" defaultValue={input.lastNameInput || ''} onChange={(e) => setInput({ lastNameInput: e.target.value})} />
                         </div>
                         <div>
-                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" value={input.emailInput} onChange={(e) => setInput({ emailInput: e.target.value})} />
+                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" defaultValue={input.emailInput || ''} onChange={(e) => setInput({ emailInput: e.target.value})} />
                         </div>
                         <div>
-                            <input type="text" id="password" name="password" placeholder="Password" value={input.passwordInput} onChange={(e) => setInput({ passwordInput: e.target.value})} />
+                            <input type="text" id="password" name="password" placeholder="Password" defaultValue={input.passwordInput || ''} onChange={(e) => setInput({ passwordInput: e.target.value})} />
                         </div>
                         <button type="submit">Claim your free trial</button>
                         <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
