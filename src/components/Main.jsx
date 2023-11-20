@@ -11,12 +11,14 @@ function Main() {
     function handleSubmitForm(e) {
         e.preventDefault();
 
-        for(let inputEl in input) {
-            if(!input[inputEl]) {
-                console.log('wrong')
+        for(let el of e.target) {
+            if(el.nodeName == 'INPUT' && !el.value) {
+                el.parentElement.classList.add('error');
+            } else if(el.nodeName == 'INPUT' && el.value) {
+                el.parentElement.classList.remove('error');
             }
+            
         }
-
     }
 
     return (
@@ -34,17 +36,21 @@ function Main() {
                 </div>
                 <div id="card" className="card">
                     <form onSubmit={handleSubmitForm}>
-                        <div>
-                            <input type="text" id="firstName" name="firstName" placeholder="First Name" defaultValue={input.firstNameInput} onChange={(e) => setInput({ firstNameInput: e.target.value})} />
+                        <div className="inputContainer">
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" defaultValue={input.firstNameInput || ''} onChange={(e) => setInput({ firstNameInput: e.target.value })} />
+                            <p className="errorMessage">First Name cannot empty</p>
                         </div>
-                        <div>
-                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" defaultValue={input.lastNameInput || ''} onChange={(e) => setInput({ lastNameInput: e.target.value})} />
+                        <div className="inputContainer">
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" defaultValue={input.lastNameInput || ''} onChange={(e) => setInput({ lastNameInput: e.target.value })} />
+                            <p className="errorMessage">Last Name cannot empty</p>
                         </div>
-                        <div>
-                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" defaultValue={input.emailInput || ''} onChange={(e) => setInput({ emailInput: e.target.value})} />
+                        <div className="inputContainer">
+                            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" defaultValue={input.emailInput || ''} onChange={(e) => setInput({ emailInput: e.target.value })} />
+                            <p className="errorMessage">Email cannot empty</p>
                         </div>
-                        <div>
-                            <input type="text" id="password" name="password" placeholder="Password" defaultValue={input.passwordInput || ''} onChange={(e) => setInput({ passwordInput: e.target.value})} />
+                        <div className="inputContainer">
+                            <input type="text" id="password" name="password" placeholder="Password" defaultValue={input.passwordInput || ''} onChange={(e) => setInput({ passwordInput: e.target.value })} />
+                            <p className="errorMessage">Password cannot empty</p>
                         </div>
                         <button type="submit">Claim your free trial</button>
                         <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
