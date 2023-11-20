@@ -24,7 +24,6 @@ function Main() {
                     el.parentElement.classList.add('wrong');
                 } else {
                     el.parentElement.classList.remove('wrong');
-
                 }
             }   
         }
