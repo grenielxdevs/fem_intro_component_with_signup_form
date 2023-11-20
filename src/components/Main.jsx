@@ -17,7 +17,16 @@ function Main() {
             } else if(el.nodeName == 'INPUT' && el.value) {
                 el.parentElement.classList.remove('error');
             }
-            
+
+            const emailRegEx = /^\S+@\S+\.\S+$/;
+            if(el.id === 'emailAddress' && el.value.length > 1) {
+                if(!emailRegEx.test(el.value)) {
+                    el.parentElement.classList.add('wrong');
+                } else {
+                    el.parentElement.classList.remove('wrong');
+
+                }
+            }   
         }
     }
 
@@ -47,6 +56,7 @@ function Main() {
                         <div className="inputContainer">
                             <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" defaultValue={input.emailInput || ''} onChange={(e) => setInput({ emailInput: e.target.value })} />
                             <p className="errorMessage">Email cannot empty</p>
+                            <p className="errorWrongMessage">Looks like this is not an email</p>
                         </div>
                         <div className="inputContainer">
                             <input type="text" id="password" name="password" placeholder="Password" defaultValue={input.passwordInput || ''} onChange={(e) => setInput({ passwordInput: e.target.value })} />

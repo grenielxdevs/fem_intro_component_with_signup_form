@@ -92,16 +92,28 @@ body {
   font-weight: 500;
 }
 
-#main-content .form-content .inputContainer.error input {
+#main-content .form-content .inputContainer.error input,
+#main-content .form-content .inputContainer.wrong input {
   background: url('/images/icon-error.svg') right 15px center no-repeat;
   border: 1px solid red;
 }
 
-#main-content .form-content .inputContainer .errorMessage {
+#main-content .form-content .inputContainer .errorMessage,
+#main-content .form-content .inputContainer .errorWrongMessage {
+  display: none;
   margin: 5px 0 0;
   font-size: 12px;
+  font-style: italic;
   color: red;
   text-align: right;
+}
+
+#main-content .form-content .inputContainer.error .errorMessage {
+  display: block;
+}
+
+#main-content .form-content .inputContainer.wrong .errorWrongMessage {
+  display: block;
 }
 
 #main-content .form-content input:focus,
